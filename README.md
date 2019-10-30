@@ -1,9 +1,9 @@
-# VueJs, NodeJs, Express, Mongoose, AdminMongo in Docker
+# VueJs, NodeJs, Express, MongoDB, AdminMongo in Docker
 
 Service using docker to create a simple full stack CRUD.
 Front-end using VueJs and Vuetify framework.
 Back-end using NodeJs and Express framework for the api.
-Database used was Mongoose and a adminMongo docker image to view database data from a web dashboard.
+Database used was MongoDB and a adminMongo docker image to view database data from a web dashboard.
 
 
 ## How to run
@@ -22,7 +22,7 @@ docker-compose up
 
 ## Services
 
-Front-end is served on port 8080
+### Front-end is served on port 8080
 
 ```
 http://localhost:8080/crud
@@ -33,15 +33,16 @@ http://localhost:8080/search
 ```
 
 
-Back-end is served on port 4000
+### Back-end is served on port 4000
 
 To generate some data in the database use a get request to
 
 ```
 http://localhost:4000/empresas/data
 ```
+### MongoDB
 
-To access adminMongo to see data in database go to 
+To access adminMongo to see data in the database go to 
 
 ```
 http://localhost:1234/app/connection_list
