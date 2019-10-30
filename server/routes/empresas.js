@@ -95,12 +95,6 @@ router.get('/', async (req, res) => {
 
 //Delete empresa
 router.delete('/:empresaId', async (req, res) => {
-    //Check if body is empty
-    if (Object.keys(req.body).length === 0) {
-        return res.json(
-            { "code": "500", "msg": "Failed to find" }
-        )
-    }
     try {
         const empresa = await Empresa.remove({
             _id: req.params.empresaId
