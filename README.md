@@ -47,6 +47,15 @@ To access adminMongo to see data in database go to
 http://localhost:1234/app/connection_list
 ```
 
-In the "Connection string" field add --> mongodb://db:27017/core
-In the "Connection name" give a name ex: myDB
+In the "Connection string" field add 
+
+```
+mongodb://db:27017/core
+```
+
+In the "Connection name" field add a name (ex: MyDB)
+
+```
+mongodb://db:27017/core
+```
 Press "Add Connection" button, wait a sec for it to add and press "Connect" (Grey button)
