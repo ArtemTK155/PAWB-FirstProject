@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  api:
+    image: 'node:10.16.3-alpine'
+    working_dir: '/home/api'
+    volumes:
+      - ./server:/home/api
+      - /home/api/node_modules
+    command: "sh -c 'npm install && npm run start'"
+    depends_on:
+        - db
+    environment:
+      NODE_ENV: development
+    ports:
+      - 4000:4000
+  db:
+      image: 'mongo:4' 
+      ports:
+        - "27017:27017"
+  adminmongo:
+    image: "mrvautin/adminmongo"
+    ports:
+      - "1234:1234"
+    environment:
+      - HOST=0.0.0.0
+  front:
+    container_name: front
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    volumes:
+      - ./client:/usr/src/app
+      - /var/www/docker-vue/node_modules
+    environment:
+      - npm_config_unsafe_perm=true
+      - HOST=0.0.0.0
+    ports:
+      - "8080:8080"  
