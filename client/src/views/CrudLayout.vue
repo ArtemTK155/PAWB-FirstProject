@@ -1,12 +1,12 @@
 <template>
-<v-container >
+  <v-container>
     <v-row>
-        <v-col>
-            <FormOne />
-            <EditeDeleteEmp />
-        </v-col>
+      <v-col>
+        <FormOne />
+        <EditeDeleteEmp />
+      </v-col>
     </v-row>
-</v-container>
+  </v-container>
 </template>
 
 <script>
@@ -14,12 +14,11 @@ import FormOne from "@/components/FormOne";
 import EditeDeleteEmp from "@/components/EditeDeleteEmp";
 
 export default {
-    name: "layout",
-    fromChild: [],
-    components: {
-        FormOne,
-        EditeDeleteEmp
-    }
-
+  name: "layout",
+  fromChild: [],
+  components: {
+    FormOne,
+    EditeDeleteEmp
+  }
 };
 </script>

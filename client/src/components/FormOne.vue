@@ -77,7 +77,7 @@ import { validationMixin } from "vuelidate";
 import { required } from "vuelidate/lib/validators";
 import axios from "axios";
 import { mapActions } from "vuex";
-import 'vuetify/dist/vuetify.min.css'
+import "vuetify/dist/vuetify.min.css";
 export default {
   mixins: [validationMixin],
   validations: {
