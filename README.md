@@ -17,14 +17,14 @@ git clone https://github.com/ArtemTK155/PAWB-FirstProject.git
 Go to the project folder and run the docker command
 
 ```
-VUE_APP_GMAP_KEY="your google maps api key"
-VUE_APP_REST_API="http://localhost:4000/empresas"
+docker-compose up
 ```
 
 Go to the client directory and create a file .env and add
 
 ```
-docker-compose up
+VUE_APP_GMAP_KEY="your google maps api key"
+VUE_APP_REST_API="http://localhost:4000/empresas"
 ```
 
 ## Services
