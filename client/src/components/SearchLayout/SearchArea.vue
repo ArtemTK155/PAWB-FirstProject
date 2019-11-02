@@ -35,6 +35,7 @@ import axios from "axios";
 export default {
   data() {
     return {
+      api: process.env.VUE_APP_REST_API,
       loading: false,
       items: [],
       search: null,
@@ -65,7 +66,6 @@ export default {
   },
 
   methods: {
-    ...mapActions(["fetchNames"]),
     ...mapActions(["fetchFregs"]),
 
     querySelections2(v) {
@@ -76,16 +76,16 @@ export default {
       this.loading2 = false;
     },
     async searchEvn() {
+      if (this.select === "") this.select = null;
+      if (this.select2 === undefined) this.select2 = null;
       try {
-        const response = await axios.post(
-          "http://localhost:4000/empresas/search",
-          {
-            nome: this.select,
-            freg: this.select2
-          }
-        );
-        console.log(response.data);
+        const response = await axios.post(this.api + "/search", {
+          nome: this.select,
+          freg: this.select2
+        });
+
         this.$store.state.searchResult = response.data;
+        this.$store.commit("setPage");
       } catch (error) {
         console.error(error);
       }

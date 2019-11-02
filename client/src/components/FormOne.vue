@@ -91,6 +91,7 @@ export default {
   components: {},
 
   data: () => ({
+    api: process.env.VUE_APP_REST_API,
     name: "",
     tele: "",
     addrress: "",
@@ -137,7 +138,7 @@ export default {
       this.$v.$touch();
       if (!this.$v.$invalid) {
         axios
-          .post("http://localhost:4000/empresas", {
+          .post(this.api, {
             nome: this.name,
             telefone: this.tele,
             morada: this.addrress,
@@ -147,10 +148,6 @@ export default {
           .then(response => {
             console.log(response);
             this.$store.commit("addData", response.data);
-            this.addNames(response.data);
-            //this.$store.state.tesData.push(response)
-            // console.log("Form one")
-            //console.log(this.$store.state.tesData.data)
           })
           .catch(err => {
             console.log(err);

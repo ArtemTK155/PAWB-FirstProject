@@ -1,12 +1,10 @@
 <template>
-  <GmapMap :center="{lat:41.166680, lng: -8.604556}" :zoom="12" style="width: 400px; height: 300px">
+  <GmapMap :center="pos" :zoom="13" style="width: 650px; height: 650px">
     <GmapMarker
-      :key="index"
-      v-for="(m, index) in markers"
-      :position="m.position"
+      :position="pos"
       :clickable="true"
       :draggable="false"
-      @click="center=m.position"
+      @click="center=pos"
     />
   </GmapMap>
 </template>
@@ -26,7 +24,10 @@ export default {
   }),
 
   computed: {
-    google: gmapApi
+    google: gmapApi,
+    pos(){
+      return this.$store.state.position
+    }
   }
 };
 </script>

@@ -6,10 +6,18 @@ import vuetify from './plugins/vuetify';
 import VueScrollTo from './plugins/vue-scrollto';
 import Vuelidate from 'vuelidate';
 import * as VueGoogleMaps from 'vue2-google-maps';
+import Geocoder from '@pderas/vue2-geocoder';
+
+Vue.use(Geocoder, {
+	defaultCountryCode: null, // e.g. 'CA'
+	defaultLanguage: null, // e.g. 'en'
+	defaultMode: 'address', // or 'lat-lng'
+	googleMapsApiKey: process.env.VUE_APP_GMAP_KEY
+});
 
 Vue.use(VueGoogleMaps, {
 	load: {
-		key: 'AIzaSyCAvVhtMqdCnmS5hGQwOzlViOuVaEAXYoU',
+		key: process.env.VUE_APP_GMAP_KEY,
 		libraries: 'places' // This is required if you use the Autocomplete plugin
 		// OR: libraries: 'places,drawing'
 		// OR: libraries: 'places,drawing,visualization'

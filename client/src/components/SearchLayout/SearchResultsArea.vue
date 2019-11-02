@@ -27,6 +27,7 @@
         </v-btn>
       </v-card-actions>
     </v-card>
+    <v-pagination v-model="page" :length="6"></v-pagination>
     <v-btn v-scroll-to="'#element'">Go Up</v-btn>
   </div>
 </template>
@@ -35,7 +36,8 @@
 export default {
   data() {
     return {
-      data: ["1", "2", "3", "4", "5"]
+      data: ["1", "2", "3", "4", "5"],
+      page: 1,
     };
   },
 

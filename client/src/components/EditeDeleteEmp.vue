@@ -50,6 +50,7 @@ import axios from "axios";
 export default {
   name: "editeDelete",
   data: () => ({
+    api: process.env.VUE_APP_REST_API,
     dialog: false,
     options: {
       nome: "Nome",
@@ -107,7 +108,7 @@ export default {
   methods: {
     async getableData() {
       try {
-        const response = await axios.get("http://localhost:4000/empresas");
+        const response = await axios.get(this.api);
         this.tableData = response.data;
         this.$store.state.tesData = response.data;
         response;
@@ -122,11 +123,7 @@ export default {
 
     async itemToDelete(_id) {
       try {
-        const response = await axios.delete(
-          "http://localhost:4000/empresas/" + _id
-        );
-        //this.tableData = response.data;
-        //this.$store.state.tesData = response.data;
+        const response = await axios.delete(this.api + "/" + _id);
         response;
       } catch (error) {
         console.error(error);
@@ -136,7 +133,7 @@ export default {
     async itemToEdit(_id) {
       try {
         const response = await axios.post(
-          "http://localhost:4000/empresas/" + _id,
+          this.api + "/" + _id,
           this.editedItem
         );
         console.log("item to edit");
