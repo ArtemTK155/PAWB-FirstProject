@@ -1,23 +1,17 @@
 <template>
   <v-form>
-    <v-card>
+    <v-card dark>
       <v-container>
         <v-row>
-          <v-col>
-            <v-toolbar dark>
-              <v-toolbar-title>Criar</v-toolbar-title>
-              <v-spacer></v-spacer>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn class="mr-1" @click="submit()">
-                  <v-icon>mdi-plus-box</v-icon>Criar
-                </v-btn>
-                <v-btn class="mr-1" @click="clear">
-                  <v-icon>mdi-restart</v-icon>Reset
-                </v-btn>
-              </v-card-actions>
-            </v-toolbar>
-          </v-col>
+          <v-toolbar dense flat>
+            <v-spacer></v-spacer>
+            <v-btn class="mr-1" @click="submit()">
+              <v-icon>mdi-plus-box</v-icon>Criar
+            </v-btn>
+            <v-btn class="mr-1" @click="clear">
+              <v-icon>mdi-restart</v-icon>Reset
+            </v-btn>
+          </v-toolbar>
         </v-row>
         <v-row>
           <v-col cols="12" sm="6" md="6" lg="3">

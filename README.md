@@ -63,7 +63,4 @@ mongodb://db:27017/core
 
 In the "Connection name" field add a name (ex: MyDB)
 
-```
-mongodb://db:27017/core
-```
 Press "Add Connection" button, wait a sec for it to add and press "Connect" (Grey button)

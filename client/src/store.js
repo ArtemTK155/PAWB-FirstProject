@@ -9,8 +9,9 @@ export default new Vuex.Store({
 		autoCompFreg: [],
 		searchResult: [],
 		page: 1,
-		position: { lat: 41.242340, lng: -8.525947 },
+		position: { lat: 41.24234, lng: -8.525947 },
 		api: process.env.VUE_APP_REST_API,
+		//msg: ''
 	},
 	getters: {
 		fregs: (state) => state.autoCompFreg,
@@ -29,7 +30,13 @@ export default new Vuex.Store({
 		},
 		addData(state, newData) {
 			state.tesData.push(newData);
+		},
+		/*
+		changeMsg(state, newMsg) {
+			state.msg = newMsg;
+			console.log(state.msg);
 		}
+		*/
 	},
 	actions: {
 		async fetchFregs({ commit }) {
