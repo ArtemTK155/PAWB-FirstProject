@@ -1,0 +1,41 @@
+ <CompB v-bind:propMsg="propMsg" v-on:changedMsg="newMsg"/>  
+
+import CompB from "@/views/CompB";
+
+  methods: {
+    newMsg(val) {
+      this.propMsg = val;
+    },
+    sendToCompB(val) {
+      this.$root.$emit("fromA", val);
+    }
+  },
+
+  computed: {
+    sharedMsg() {
+      return this.$store.state.msg;
+    }
+  },
+  watch: {
+    msg2(val) {
+      //this.sendToCompB(val);
+      this.$store.commit("changeMsg", val);
+    }
+  },
+  mounted() {
+    this.$root.$on("fromB", val => {
+      this.msg = val;
+    });
+  }
+
+
+   props: ["propMsg"],
+
+    sharedMsg: {
+      get() {
+        return this.$store.state.msg;
+      },
+      set(val) {
+        this.$store.commit("changeMsg", val);
+      }
+    },
