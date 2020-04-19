@@ -5,7 +5,10 @@ Front-end using VueJs and Vuetify framework.
 Back-end using NodeJs and Express framework for the api.
 Database used was MongoDB and a adminMongo docker image to view database data from a web dashboard.
 
-
+## Quick Demo
+```
+https://youtu.be/zY86UaMpqp4
+```
 ## How to run
 
 Clone this repo
